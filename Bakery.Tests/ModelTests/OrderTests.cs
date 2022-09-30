@@ -69,5 +69,15 @@ namespace Bakery.Tests
       Assert.AreEqual(updatedCost, result);
     }
 
+    [TestMethod]
+    public void SetDate_SetDate_Int()
+    {
+      int Date = 09302022;
+      Order newOrder = new Order("", 0, 09302022);
+      int updatedDate = 1252022;
+      newOrder.Date = updatedDate;
+      int result = newOrder.Date;
+      Assert.AreEqual(updatedDate, result);
+    }
   }
 }
