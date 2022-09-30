@@ -37,5 +37,15 @@ namespace Bakery.Tests
       string result = newVendor.Location;
       Assert.AreEqual(location, result);
     }
+
+    [TestMethod]
+    public void GetId_ReturnsVendorId_Int()
+    {
+      string name = "Suzie's cafe";
+      string location = "23rd Street";
+      Vendor newVendor = new Vendor(name, location);
+      int result = newVendor.Id;
+      Assert.AreEqual(1, result);
+    }
   }
 }
