@@ -28,5 +28,14 @@ namespace Bakery.Tests
       string result = newOrder.Items;
       Assert.AreEqual(items, result);
     }
+
+    [TestMethod]
+    public void GetCost_ReturnCost_Int()
+    {
+      int cost = 35;
+      Order newOrder = new Order("", 35, 0);
+      int result = newOrder.Cost;
+      Assert.AreEqual(cost, result);
+    }
   }
 }
