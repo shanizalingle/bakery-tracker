@@ -11,11 +11,11 @@ namespace Bakery.Models
 
     private static List<Order> _orders = new List<Order>{};
   
-    public Order(string items, int cost, int date)
+    public Order(string orderItems, int orderCost, int orderDate)
     {
-      Items = items;
-      Cost = cost;
-      Date = date;
+      Items = orderItems;
+      Cost = orderCost;
+      Date = orderDate;
       _orders.Add(this);
       Id = _orders.Count;
     }
