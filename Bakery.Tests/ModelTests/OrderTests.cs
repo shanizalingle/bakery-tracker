@@ -114,5 +114,20 @@ namespace Bakery.Tests
       int result = newOrder.Id;
       Assert.AreEqual(1, result);
     }
+
+    [TestMethod]
+    public void Find_ReturnsCorrectItem_Item()
+    {
+      string item1 = "3 bread, 2 pastry";
+      string item2 = "0 bread, 4 pastry";
+      int cost1 = 35;
+      int cost2 = 12;
+      int date1 = 09302022;
+      int date2 = 12252022;
+      Order newOrder1 = new Order(item1, cost1, date1);
+      Order newOrder2 = new Order(item2, cost2, date2);
+      Order result = new Order("Incorrect test item", 0, 0);
+      result = Order.Find(2);
+    }
   }
 }
