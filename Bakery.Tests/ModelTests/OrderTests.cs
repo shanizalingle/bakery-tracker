@@ -46,5 +46,17 @@ namespace Bakery.Tests
       int result = newOrder.Date;
       Assert.AreEqual(date, result);
     }
+
+    [TestMethod]
+    public void SetItem_SetItem_String()
+    {
+      string items = "3 bread, 2 pastry";
+      Order newOrder = new Order(items, 0, 0);
+      string updatedItems = "0 bread, 4 pastry";
+      newOrder.Items = updatedItems;
+      string result = newOrder.Items;
+      Assert.AreEqual(updatedItems, result);
+    }
+
   }
 }
