@@ -21,5 +21,10 @@ namespace Bakery.Models
     {
       _orders.Clear();
     }
+
+    public static List<Order> GetAll()
+    {
+      return _orders;
+    }
   }
 }
