@@ -74,5 +74,21 @@ namespace Bakery.Tests
       Vendor result = Vendor.Find(2);
       Assert.AreEqual(newVendor2, result);
     }
+
+    [TestMethod]
+    public void AddItem_AssociatesItemWithCategory_ItemList()
+    {
+      string item = "3 bread, 2 pastry";
+      int cost = 35;
+      int date = 09302022;
+      Order newOrder = new Order(item, cost, date);
+      List<Order> newList = new List<Order> { newOrder };
+      string name = "Suzie's Cafe";
+      string location = "23rd Street";
+      Vendor newVendor = new Vendor(name, location);
+      newVendor.AddOrder(newOrder);
+      List<Order> result = newVendor.Orders;
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
