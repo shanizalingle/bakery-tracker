@@ -1,0 +1,20 @@
+@{
+    Layout = "_Layout";
+  }
+
+  @using Bakery.Models;
+
+    <h2>Vendors</h2>
+
+    @if (@Model.Count == 0)
+    {
+      <h4>No available vendors.</h4>
+    } 
+
+    @foreach (Vendor vendor in Model)
+    {
+      <h4><a href='/vendors/@vendor.Id'>@vendor.Name</a></h4>
+    }
+
+    <button class="btn btn-light"><a href='/vendors/new'>Add Vendor</a></button>
+    <button class="btn btn-light"><a href='/'>Home</a></button>
