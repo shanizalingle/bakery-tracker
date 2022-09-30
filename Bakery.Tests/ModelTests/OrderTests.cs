@@ -37,5 +37,14 @@ namespace Bakery.Tests
       int result = newOrder.Cost;
       Assert.AreEqual(cost, result);
     }
+
+    [TestMethod]
+    public void GetDate_ReturnDate_Int()
+    {
+      int date = 09302022;
+      Order newOrder = new Order("", 0, 09302022);
+      int result = newOrder.Date;
+      Assert.AreEqual(date, result);
+    }
   }
 }
