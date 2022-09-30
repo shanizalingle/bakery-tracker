@@ -103,5 +103,16 @@ namespace Bakery.Tests
       List<Order> result = Order.GetAll();
       CollectionAssert.AreEqual(newList, result);
     }
+
+    [TestMethod]
+    public void GetId_OrdersReturnId_Int()
+    {
+      string item = "3 bread, 2 pastry";
+      int cost = 35;
+      int date = 09302022;
+      Order newOrder = new Order(item, cost, date);
+      int result = newOrder.Id;
+      Assert.AreEqual(1, result);
+    }
   }
 }
