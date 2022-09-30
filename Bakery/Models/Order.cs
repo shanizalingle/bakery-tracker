@@ -7,6 +7,7 @@ namespace Bakery.Models
     public string Items { get; set; }
     public int Cost { get; set; }
     public int Date { get; set; }
+
     private static List<Order> _orders = new List<Order>{};
   
     public Order(string items, int cost, int date)

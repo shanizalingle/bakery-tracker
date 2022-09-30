@@ -87,5 +87,21 @@ namespace Bakery.Tests
       List<Order> result = Order.GetAll();
       CollectionAssert.AreEqual(newList, result);
     }
+
+    [TestMethod]
+    public void GetAll_ReturnsItems_ItemList()
+    {
+      string item1 = "3 bread, 2 pastry";
+      string item2 = "0 bread, 4 pastry";
+      int cost1 = 35;
+      int cost2 = 12;
+      int date1 = 09302022;
+      int date2 = 12252022;
+      Order newOrder1 = new Order(item1, cost1, date1);
+      Order newOrder2 = new Order(item2, cost2, date2);
+      List<Order> newList = new List<Order> { newOrder1, newOrder2 };
+      List<Order> result = Order.GetAll();
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
