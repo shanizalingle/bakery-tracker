@@ -47,5 +47,19 @@ namespace Bakery.Tests
       int result = newVendor.Id;
       Assert.AreEqual(1, result);
     }
+
+    [TestMethod]
+    public void GetAll_ReturnsAllVendorObjects_VendorList()
+    {
+      string name1 = "Suzie's Cafe";
+      string name2 = "Matt's Coffee Shop";
+      string location1 = "23rd Street";
+      string location2 = "SW Main Street";
+      Vendor newVendor1 = new Vendor(name1, location1);
+      Vendor newVendor2 = new Vendor(name2, location2);
+      List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2 };
+      List<Vendor> result = Vendor.GetAll();
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
