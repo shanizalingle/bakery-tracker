@@ -1,0 +1,19 @@
+@{
+    Layout = "_Layout";
+  }
+
+  @using Bakery.Models;
+
+    <h1>Order</h1>
+    @if (Model.Count == 0)
+    {
+      <p>No items found in order.</p>
+    }
+    <ul>
+      @foreach (Order order in Model)
+      {
+        <li><a href='/orders/@order.Id'>@order.Items</a></li>
+      }
+    </ul>
+
+    <button class="btn btn-light"><a href="/orders/new">Add Order</a></button>
