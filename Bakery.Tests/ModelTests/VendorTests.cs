@@ -80,7 +80,7 @@ namespace Bakery.Tests
     {
       string item = "3 bread, 2 pastry";
       int cost = 35;
-      int date = 09302022;
+      string date = "09302022";
       Order newOrder = new Order(item, cost, date);
       List<Order> newList = new List<Order> { newOrder };
       string name = "Suzie's Cafe";

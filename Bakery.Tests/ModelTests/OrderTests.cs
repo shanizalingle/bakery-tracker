@@ -16,7 +16,7 @@ namespace Bakery.Tests
     [TestMethod]
     public void OrderConstructor_CreatesOrdersOfOrder_Order()
     {
-      Order newOrder = new Order("", 0, 0);  
+      Order newOrder = new Order("", 0, "");  
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
@@ -24,7 +24,7 @@ namespace Bakery.Tests
     public void GetItems_ReturnItems_String()
     {
       string items = "3 bread, 2 pastry";
-      Order newOrder = new Order(items, 0, 0);
+      Order newOrder = new Order(items, 0, "");
       string result = newOrder.Items;
       Assert.AreEqual(items, result);
     }
@@ -33,7 +33,7 @@ namespace Bakery.Tests
     public void GetCost_ReturnCost_Int()
     {
       int cost = 35;
-      Order newOrder = new Order("", 35, 0);
+      Order newOrder = new Order("", 35, "");
       int result = newOrder.Cost;
       Assert.AreEqual(cost, result);
     }
@@ -41,9 +41,9 @@ namespace Bakery.Tests
     [TestMethod]
     public void GetDate_ReturnDate_Int()
     {
-      int date = 09302022;
-      Order newOrder = new Order("", 0, 09302022);
-      int result = newOrder.Date;
+      string date = "09302022";
+      Order newOrder = new Order("", 0, date);
+      string result = newOrder.Date;
       Assert.AreEqual(date, result);
     }
 
@@ -51,7 +51,7 @@ namespace Bakery.Tests
     public void SetItem_SetItem_String()
     {
       string items = "3 bread, 2 pastry";
-      Order newOrder = new Order(items, 0, 0);
+      Order newOrder = new Order(items, 0, "");
       string updatedItems = "0 bread, 4 pastry";
       newOrder.Items = updatedItems;
       string result = newOrder.Items;
@@ -62,7 +62,7 @@ namespace Bakery.Tests
     public void SetCost_SetCost_Int()
     {
       int cost = 35;
-      Order newOrder = new Order("", cost, 0);
+      Order newOrder = new Order("", cost, "");
       int updatedCost = 12;
       newOrder.Cost = updatedCost;
       int result = newOrder.Cost;
@@ -72,11 +72,11 @@ namespace Bakery.Tests
     [TestMethod]
     public void SetDate_SetDate_Int()
     {
-      int date = 09302022;
+      string date = "09302022";
       Order newOrder = new Order("", 0, date);
-      int updatedDate = 1252022;
+      string updatedDate = "1252022";
       newOrder.Date = updatedDate;
-      int result = newOrder.Date;
+      string result = newOrder.Date;
       Assert.AreEqual(updatedDate, result);
     }
 
@@ -95,8 +95,8 @@ namespace Bakery.Tests
       string item2 = "0 bread, 4 pastry";
       int cost1 = 35;
       int cost2 = 12;
-      int date1 = 09302022;
-      int date2 = 12252022;
+      string date1 = "09302022";
+      string date2 = "12252022";
       Order newOrder1 = new Order(item1, cost1, date1);
       Order newOrder2 = new Order(item2, cost2, date2);
       List<Order> newList = new List<Order> { newOrder1, newOrder2 };
@@ -109,7 +109,7 @@ namespace Bakery.Tests
     {
       string item = "3 bread, 2 pastry";
       int cost = 35;
-      int date = 09302022;
+      string date = "09302022";
       Order newOrder = new Order(item, cost, date);
       int result = newOrder.Id;
       Assert.AreEqual(1, result);
@@ -122,11 +122,11 @@ namespace Bakery.Tests
       string item2 = "0 bread, 4 pastry";
       int cost1 = 35;
       int cost2 = 12;
-      int date1 = 09302022;
-      int date2 = 12252022;
+      string date1 = "09302022";
+      string date2 = "12252022";
       Order newOrder1 = new Order(item1, cost1, date1);
       Order newOrder2 = new Order(item2, cost2, date2);
-      Order result = new Order("Incorrect test item", 0, 0);
+      Order result = new Order("Incorrect test item", 0, "");
       result = Order.Find(2);
     }
   }

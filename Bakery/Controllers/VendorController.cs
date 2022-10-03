@@ -40,7 +40,7 @@ namespace Bakery.Controllers
 
     // Adds new orders within vendor list, not new vendors:
     [HttpPost("/vendors/{vendorId}/orders")]
-    public ActionResult Create(int vendorId, string orderItems, int orderCost, int orderDate)
+    public ActionResult Create(int vendorId, string orderItems, int orderCost, string orderDate)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
       Vendor foundVendor = Vendor.Find(vendorId);

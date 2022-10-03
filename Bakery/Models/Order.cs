@@ -6,12 +6,12 @@ namespace Bakery.Models
   {
     public string Items { get; set; }
     public int Cost { get; set; }
-    public int Date { get; set; }
+    public string Date { get; set; }
     public int Id { get; }
 
     private static List<Order> _instances = new List<Order>{};
   
-    public Order(string orderItems, int orderCost, int orderDate)
+    public Order(string orderItems, int orderCost, string orderDate)
     {
       Items = orderItems;
       Cost = orderCost;
