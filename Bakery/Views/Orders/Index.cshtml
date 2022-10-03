@@ -12,8 +12,12 @@
     <ul>
       @foreach (Order order in Model)
       {
-        <li><a href='/orders/@order.Id'>@order.Items</a></li>
+        <li>
+          <a href='/orders/@order.Id'>@order.Items</a>
+        </li>
       }
     </ul>
 
-    <button class="btn btn-light"><a href="/orders/new">Add Order</a></button>
+    <button class="btn btn-light">
+      <a href="/orders/new">Add Order</a>
+    </button>

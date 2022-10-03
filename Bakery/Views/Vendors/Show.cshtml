@@ -3,15 +3,23 @@
   } 
     @using Bakery.Models;
 
-    <h3>Orders in Vendor</h3>
+    <h3>Orders in @Model.Name</h3>
 
-    <ol>
+    <ul>
     @foreach (Order order in @Model["orders"])
     {
-      <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Items</a></li>
+      <li>
+        <a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Items</a>
+      </li>
     }
-    </ol>
+    </ul>
 
-    <button class="btn btn-light"><a href='/vendors/@Model["vendor"].Id/orders/new'>Add Order</a></button>
-    <button class="btn btn-light"><a href='/vendors'>View Vendors</a></button>
-    <button class="btn btn-light"><a href='/'>Home</a></button>
+    <button class="btn btn-light">
+      <a href='/vendors/@Model["vendor"].Id/orders/new'>Add Order</a>
+    </button>
+    <button class="btn btn-light">
+      <a href='/vendors'>View Vendors</a>
+    </button>
+    <button class="btn btn-light">
+      <a href='/'>Home</a>
+    </button>

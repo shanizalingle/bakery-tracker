@@ -5,12 +5,14 @@
   <h2>Add Vendor</h2>
 
   <form action="/vendors" method="post">
-      <label for="vendorName">Name: </label>
-      <input id="vendorName" name="vendorName" type="text">
-      <label for="vendorLocation">Location: </label>
-      <input id="vendorLocation" Location="vendorLocation" type="text">
+      <input id="vendorName" name="vendorName" type="text" placeholder="Name">
+      <input id="vendorLocation" Location="vendorLocation" type="text" placeholder="Location">
       <button type="submit" class="btn btn-light">Submit</button>
     </form>
 
-    <button class="btn btn-light"><a href="/">Home</a></button>
-    <button class="btn btn-light"><a href="/vendors">View Vendors</a></button>
+    <button class="btn btn-light">
+      <a href="/">Home</a>
+    </button>
+    <button class="btn btn-light">
+      <a href="/vendors">View Vendors</a>
+    </button>
