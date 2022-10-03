@@ -61,8 +61,8 @@ namespace Bakery.Tests
     [TestMethod]
     public void SetCost_SetCost_Int()
     {
-      int Cost = 35;
-      Order newOrder = new Order("", 35, 0);
+      int cost = 35;
+      Order newOrder = new Order("", cost, 0);
       int updatedCost = 12;
       newOrder.Cost = updatedCost;
       int result = newOrder.Cost;
@@ -72,8 +72,8 @@ namespace Bakery.Tests
     [TestMethod]
     public void SetDate_SetDate_Int()
     {
-      int Date = 09302022;
-      Order newOrder = new Order("", 0, 09302022);
+      int date = 09302022;
+      Order newOrder = new Order("", 0, date);
       int updatedDate = 1252022;
       newOrder.Date = updatedDate;
       int result = newOrder.Date;
