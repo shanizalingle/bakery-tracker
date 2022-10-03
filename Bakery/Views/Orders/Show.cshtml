@@ -2,16 +2,17 @@
     Layout = "_Layout";
   }
 
-  <h1>@Model.Name Order details: </h1>
+  @using Bakery.Models;
+
+  <h1>@Model["vendor"].Name Order details: </h1>
 
   <h2>@Model["order"].Items</h2>
   <h2>@Model["order"].Cost</h2>
   <h2>@Model["order"].Date</h2>
-  <h3>Vendor: @Model["vendor"].Name</h3>
 
   <button class="btn btn-light">
     <a href='/vendors/@Model["vendor"].Id/orders/new'>Add order</a>
   </button>
   <button class="btn btn-light">
-    <a href='/vendors'>View vendors</a>
+    <a href='/vendors'>View Vendors</a>
   </button>
