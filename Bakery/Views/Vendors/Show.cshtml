@@ -3,7 +3,12 @@
   } 
     @using Bakery.Models;
 
-    <h3>Orders in @Model["vendor"].Name</h3>
+    <h1>Orders in @Model["vendor"].Name</h1>
+
+    @if (@Model["orders"].Count == 0)
+    {
+      <h4>No available orders.</h4>
+    } 
 
     <ul>
     @foreach (Order order in @Model["orders"])

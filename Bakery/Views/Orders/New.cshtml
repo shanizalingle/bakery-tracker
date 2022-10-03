@@ -5,9 +5,9 @@
   <h1>Add order to @Model.Name</h1>
 
   <form action="/vendors/@Model.Id/orders" method="post">
-      <input for="orderItems" name="orderItems" type="text" placeholder="Item">
-      <input for="orderCost" name="orderCost" type="text" placeholder="Cost">
-      <input for="orderDate" name="orderDate" type="text" placeholder="Date">
+      <input for="orderItems" name="orderItems" type="text" placeholder="Items">
+      <input for="orderCost" name="orderCost" type="number" placeholder="Cost">
+      <input for="orderDate" name="orderDate" type="text" placeholder="mm/dd/yyyy">
     <button class="btn btn-light" type='submit'>Add</button>
   </form>
 
