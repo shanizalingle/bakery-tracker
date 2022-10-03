@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System;
 using Microsoft.AspNetCore.Mvc;
 using Bakery.Models;
 
@@ -25,7 +24,7 @@ namespace Bakery.Controllers
     public ActionResult Create(string vendorName, string vendorLocation)
     {
       Vendor newVendor = new Vendor(vendorName, vendorLocation);
-      return RedirectToAction("Show");
+      return RedirectToAction("Index");
     }
 
     [HttpGet("/vendors/{id}")]

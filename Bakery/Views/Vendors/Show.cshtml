@@ -3,14 +3,14 @@
   } 
     @using Bakery.Models;
 
-    <h3>Orders in @Model.Name</h3>
+    <h3>Orders in @Model["vendor"].Name</h3>
 
     <ul>
     @foreach (Order order in @Model["orders"])
     {
-      <li>
-        <a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Items</a>
-      </li>
+      <li>Items: @order.Items</li>
+      <li>Cost: $@order.Cost</li>
+      <li>Date: @order.Date</li>
     }
     </ul>
 
@@ -23,3 +23,4 @@
     <button class="btn btn-light">
       <a href='/'>Home</a>
     </button>
+    

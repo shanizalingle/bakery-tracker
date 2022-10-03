@@ -9,30 +9,30 @@ namespace Bakery.Models
     public int Date { get; set; }
     public int Id { get; }
 
-    private static List<Order> _orders = new List<Order>{};
+    private static List<Order> _instances = new List<Order>{};
   
     public Order(string orderItems, int orderCost, int orderDate)
     {
       Items = orderItems;
       Cost = orderCost;
       Date = orderDate;
-      _orders.Add(this);
-      Id = _orders.Count;
+      _instances.Add(this);
+      Id = _instances.Count;
     }
 
     public static void ClearAll()
     {
-      _orders.Clear();
+      _instances.Clear();
     }
 
     public static List<Order> GetAll()
     {
-      return _orders;
+      return _instances;
     }
 
     public static Order Find(int searchId)
     {
-      return _orders[searchId];
+      return _instances[searchId-1];
     }
   }
 }
